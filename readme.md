@@ -58,6 +58,20 @@ pip install pycocotools -i https://pypi.douban.com/simple
 
 pip install lvis
 ```
+
+### Installation on Windows
+We integrate scripts from https://github.com/sdbds/AnyDoor-for-windows/tree/main into this repo.
+The installation script will automatically download anydoor pruned ckpt (you don't have to download the model again in later steps)
+Other notable changes include: modifying config/demo.yaml and inference.yaml to use the pruned model.
+
+```bash
+conda create -n pyanydoor python=3.8.5
+conda activate pyanydoor
+.\install_windows.ps1
+Download dinov2 model from this link https://dl.fbaipublicfiles.com/dinov2/dinov2_vitg14/dinov2_vitg14_reg4_pretrain.pth to ./path/dinov2_vitg14_pretrain.pth
+
+.\run_gui.ps1 (to run gradio app)
+```
 ## Download Checkpoints
 Download AnyDoor checkpoint: 
 * [ModelScope](https://modelscope.cn/models/damo/AnyDoor/files)
